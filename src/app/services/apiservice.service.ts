@@ -6,18 +6,19 @@ import { Solution } from '../models/solution';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { environment } from './../../environments/enviornment.dev';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiserviceService {
 
-  private getQListURL = 'http://localhost:53392/api/QuestionList';
-  private getCatListURL = 'http://localhost:53392/api/CategoryList';
-  private getSolutionListURL = 'http://localhost:53392/api/SolutionList';
-  private postNewQuestionURL = 'http://localhost:53392/api/NewQuestion';
+  private getQListURL = environment.QListURL;
+  private getCatListURL = environment.CatListURL;
+  private getSolutionListURL = environment.SolutionListURL;
+  private postNewQuestionURL = environment.NewQuestionURL;
   private putQuestionChangeURL = '';
-  private postNewSolutionURL = 'http://localhost:53392/api/NewSolution';
+  private postNewSolutionURL = environment.NewSolutionURL;
 
   constructor(private httpClient: HttpClient,
     private messageService: MessageService) {
