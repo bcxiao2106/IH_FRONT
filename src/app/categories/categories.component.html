@@ -1,0 +1,8 @@
+<div class="row" style="padding: 1em;">
+  <a class="badge-pill badge-light" style="margin-left: 3px; margin-bottom: 3px; border: 1px solid rgba(248, 80, 13, 0.322); font-size: 12px;"
+    *ngFor="let category of categories" 
+    appSelected [selectedBgColor]="selectedBgColor" [selectedColor]="selectedColor" [isBold]="isBold"
+    (click)="onSelect(category.CateId)">
+    {{ category.CategoryName }}
+</a>
+</div>
