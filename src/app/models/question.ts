@@ -6,5 +6,5 @@ export class Question {
     QuestTitle: string;
     QuestDesc: string;
     CategoryName: string;
-    SolutionList: Solution[];
+    TotalAnswers: number;
 }

@@ -12,12 +12,13 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 })
 export class ApiserviceService {
 
-  private getQListURL = 'http://localhost:53392/api/QuestionList';
-  private getCatListURL = 'http://localhost:53392/api/CategoryList';
-  private getSolutionListURL = 'http://localhost:53392/api/SolutionList';
-  private postNewQuestionURL = 'http://localhost:53392/api/NewQuestion';
-  private putQuestionChangeURL = '';
-  private postNewSolutionURL = 'http://localhost:53392/api/NewSolution';
+  private webApiHostURL = 'http://interviewhelper20180625011659.azurewebsites.net/';
+  private getQListURL = this.webApiHostURL + 'api/QuestionList';
+  private getCatListURL = this.webApiHostURL + 'api/CategoryList';
+  private getSolutionListURL = this.webApiHostURL + 'api/SolutionList';
+  private postNewQuestionURL = this.webApiHostURL + 'api/NewQuestion';
+  private putQuestionChangeURL = this.webApiHostURL + '';
+  private postNewSolutionURL = this.webApiHostURL + 'api/NewSolution';
 
   constructor(private httpClient: HttpClient,
     private messageService: MessageService) {
