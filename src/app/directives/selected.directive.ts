@@ -26,7 +26,7 @@ export class SelectedDirective implements OnInit, AfterViewInit {
     this.originalInnerHTML = this.el.nativeElement.innerHTML;
   }
 
-  @HostListener('mouseup') onClick() {
+  @HostListener('click') onClick() {
     if (!this.isSelected) {
       this.isSelected = true;
       this.select(this.selectedBgColor, this.selectedColor, this.isBold);

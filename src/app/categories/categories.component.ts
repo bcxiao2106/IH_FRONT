@@ -38,8 +38,10 @@ export class CategoriesComponent implements OnInit {
   }
 
   onSelect(cateId: number) {
+    console.log('ID: ' + cateId + ' selected Array\t' + this.selectedCategories);
     if (this.selectedCategories.indexOf(cateId) !== -1) {
       this.selectedCategories.splice(this.selectedCategories.indexOf(cateId), 1);
+      
     } else {
       this.selectedCategories.push(cateId);
     }
