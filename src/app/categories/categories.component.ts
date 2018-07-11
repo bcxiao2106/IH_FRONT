@@ -46,4 +46,10 @@ export class CategoriesComponent implements OnInit {
     this.categoryFilterEvent.emit(this.selectedCategories);
   }
 
+  resetAll() {
+    this.selectedCategories = [];
+    this.categoryFilterEvent.emit(this.selectedCategories);
+    this.ngOnInit();
+  }
+
 }

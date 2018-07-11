@@ -5,5 +5,7 @@
     (click)="onSelect(category.CateId)" 
     [innerHTML]="category.CategoryName">
   </div>
-  <a style="margin-left: 10px; font-size: 13px;font-style: italic">clear</a>
+  <div class="badge-pill badge-dark" style="margin-left: 10px; margin-bottom: 3px; border: 1px solid rgba(131, 130, 130, 0.322); font-size: 11px;vertical-align: middle;"
+  *ngIf="selectedCategories.length > 0"
+  (click)="resetAll()">Clear selected {{selectedCategories.length}} filters</div>
 </div>
