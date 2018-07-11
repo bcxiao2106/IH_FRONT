@@ -1,9 +1,9 @@
 <div class="row" style="padding: 1em;">
-  <a class="badge-pill badge-light" style="margin-left: 3px; margin-bottom: 3px; border: 1px solid rgba(248, 80, 13, 0.322); font-size: 12px;"
+  <div class="badge-pill badge-light" style="margin-left: 3px; margin-bottom: 3px; border: 1px solid rgba(248, 80, 13, 0.322); font-size: 12px;vertical-align: middle;"
     *ngFor="let category of categories" 
     appSelected [selectedBgColor]="selectedBgColor" [selectedColor]="selectedColor" [isBold]="isBold"
-    (click)="onSelect(category.CateId)">
-    {{ category.CategoryName }}
-</a>
-<a style="margin-left: 10px; font-size: 13px;">clear</a>
+    (click)="onSelect(category.CateId)" 
+    [innerHTML]="category.CategoryName">
+  </div>
+  <a style="margin-left: 10px; font-size: 13px;font-style: italic">clear</a>
 </div>
