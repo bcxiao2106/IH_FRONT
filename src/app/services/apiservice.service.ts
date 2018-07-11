@@ -6,6 +6,7 @@ import { Solution } from '../models/solution';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { environment } from './../../environments/enviornment.dev';
 
 @Injectable({
   providedIn: 'root'
