@@ -1,11 +1,6 @@
 <div class="row" style="padding: 1em;">
-  <div class="badge-pill badge-light" style="margin-left: 3px; margin-bottom: 3px; border: 1px solid rgba(248, 80, 13, 0.322); font-size: 12px;vertical-align: middle;"
-    *ngFor="let category of categories" 
-    appSelected [selectedBgColor]="selectedBgColor" [selectedColor]="selectedColor" [isBold]="isBold"
-    (click)="onSelect(category.CateId)" 
-    [innerHTML]="category.CategoryName">
-  </div>
-  <div class="badge-pill badge-dark" style="margin-left: 10px; margin-bottom: 3px; border: 1px solid rgba(131, 130, 130, 0.322); font-size: 11px;vertical-align: middle;"
-  *ngIf="selectedCategories.length > 0"
-  (click)="resetAll()">Clear selected {{selectedCategories.length}} filters</div>
-</div>
+    <button class="badge-pill badge-light" style="margin-left: 3px; margin-bottom: 3px; border: 1px solid rgba(248, 80, 13, 0.322); font-size: 12px;outline: 0px;" *ngFor="let category of categories" appSelected [selectedBgColor]="selectedBgColor" [selectedColor]="selectedColor"
+        [isBold]="isBold" [resetSignal]="resetSignal" (click)="onSelect(category.CateId)" [innerHTML]="category.CategoryName">
+</button>
+    <button class="badge-pill badge-dark" style="margin-left: 10px; margin-bottom: 3px; border: 1px solid rgba(131, 130, 130, 0.322); font-size: 11px;outline: 0px;" *ngIf="selectedCategories.length > 3" (click)="resetAll()">Clear selected {{selectedCategories.length}} filters
+</button>

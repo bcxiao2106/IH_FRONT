@@ -16,6 +16,7 @@ export class CategoriesComponent implements OnInit {
   selectedBgColor = 'rgba(248, 80, 13, 0.322)';
   selectedColor = 'rgba(58, 58, 58)';
   isBold: Boolean = true;
+  resetSignal: Boolean = false;
   categories: Category[];
   @Output('categoryFilterEvent') categoryFilterEvent = new EventEmitter();
   selectedCategories: number[] = [];
@@ -38,6 +39,9 @@ export class CategoriesComponent implements OnInit {
   }
 
   onSelect(cateId: number) {
+    if (this.resetSignal) {
+      this.resetSignal = false;
+    }
     if (this.selectedCategories.indexOf(cateId) !== -1) {
       this.selectedCategories.splice(this.selectedCategories.indexOf(cateId), 1);
     } else {
@@ -47,9 +51,10 @@ export class CategoriesComponent implements OnInit {
   }
 
   resetAll() {
+    this.resetSignal = true;
     this.selectedCategories = [];
     this.categoryFilterEvent.emit(this.selectedCategories);
-    this.ngOnInit();
+    // this.ngOnInit();
   }
 
 }
