@@ -1,46 +1,45 @@
 <!-- Button trigger modal -->
-<button type="button" class="badge-pill badge-light" data-toggle="modal" [attr.data-target]="'#ViewModal' + questionId" (click)="loadSolutions()" style="margin-bottom: 2px;margin-left:3px;border: 1px solid rgba(248, 80, 13, 0.322);font-size: 12px;">View</button>
+<button type="button" class="badge-pill badge-light" data-toggle="modal" [attr.data-target]="'#ViewModal' + questionId" (click)="loadSolutions()" style="margin-bottom: 2px;margin-left:3px;border: 1px solid rgba(248, 80, 13, 0.322);font-size: 12px;outline: 0px;">View</button>
 
 <!-- Modal -->
-<div class="modal fade" [id]="'ViewModal' + questionId" tabindex="-1" role="application" aria-labelledby="newAnswerModal"
-  aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header" style="background-color: #F8510D; color: white">
-        <h6 class="modal-title" id="exampleModalCenterTitle">View Question</h6>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<div class="modal fade" [id]="'ViewModal' + questionId" tabindex="-1" role="application" aria-labelledby="newAnswerModal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #F8510D; color: white">
+                <h6 class="modal-title" id="exampleModalCenterTitle">View Question</h6>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-      </div>
-      <div class="modal-body">
-        <div class="form-group row">
-          <div class="col-sm-12">
-            <h6>Question {{questionId}}: {{questionTitle}}</h6>
-          </div>
+            </div>
+            <div class="modal-body">
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <h6>Question {{questionId}}: {{questionTitle}}</h6>
+                    </div>
+                </div>
+                <!--Answer list-->
+                <div class="card" *ngFor="let solution of solutionList" style="margin-bottom: 15px;border: 1px solid rgba(248, 80, 13, 0.322); background-color: rgba(243, 243, 243, 0.486)">
+                    <div class="card-body">
+                        <h5 class="card-title">{{solution.SolutionId}}</h5>
+                        <p [innerHTML]="solution.SolutionDetails"></p>
+                        <a class="badge badge-pill badge-light">up +1</a>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <h6>Answer this question here:</h6>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-12">
+                        <textarea required class="form-control form-control-sm" rows="4" id="answerDetail" placeholder="Input your answer here" style="border: 1px solid rgba(248, 80, 13, 0.322)"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light btn-sm" style="border: 1px solid rgba(114, 113, 113, 0.322)" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-light btn-sm" style="border: 1px solid rgba(248, 80, 13, 0.322)" data-dismiss="modal">Add</button>
+            </div>
         </div>
-        <!--Answer list-->
-        <div class="card" *ngFor="let solution of solutionList" style="margin-bottom: 15px;border: 1px solid rgba(248, 80, 13, 0.322); background-color: rgba(243, 243, 243, 0.486)">
-          <div class="card-body">
-            <h5 class="card-title">{{solution.SolutionId}}</h5>
-            <p [innerHTML]="solution.SolutionDetails"></p>
-            <a class="badge badge-pill badge-light">up +1</a>
-          </div>
-        </div>
-        <div class="form-group row">
-          <div class="col-sm-12">
-            <h6>Answer this question here:</h6>
-          </div>
-        </div>
-        <div class="form-group row">
-          <div class="col-sm-12">
-            <textarea required class="form-control form-control-sm" rows="4" id="answerDetail" placeholder="Input your answer here" style="border: 1px solid rgba(248, 80, 13, 0.322)"></textarea>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-light btn-sm" style="border: 1px solid rgba(114, 113, 113, 0.322)" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-light btn-sm" style="border: 1px solid rgba(248, 80, 13, 0.322)" data-dismiss="modal">Add</button>
-      </div>
     </div>
-  </div>
 </div>

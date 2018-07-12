@@ -39,5 +39,4 @@ export class NewquestionComponent implements OnInit {
       this.newQuestionAdded.emit(true);
     });
   }
-
 }
