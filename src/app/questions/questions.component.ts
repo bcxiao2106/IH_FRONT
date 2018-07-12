@@ -12,7 +12,7 @@ export class QuestionsComponent implements OnInit {
   activeBgColor = 'white';
   activeColor = '#F8510D';
   displayedColumns: string[] = ['QuestionId', 'CateId', 'QuestTitle', 'QuestDesc', 'CategoryName', 'SolutionList', 'Ops'];
-  dataSource: MatTableDataSource<Question>;
+  dataSource: MatTableDataSource<Question> = new MatTableDataSource();
   questions: Question[];
   filteredQuestions: Question[];
   selectedCategories: number[];
@@ -27,7 +27,7 @@ export class QuestionsComponent implements OnInit {
           return;
         }
         this.questions = questionList;
-        this.dataSource = new MatTableDataSource(this.questions);
+        this.dataSource.data = this.questions;
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
       });
@@ -45,12 +45,13 @@ export class QuestionsComponent implements OnInit {
 
   filter(categories) {
     if (categories.length === 0) {
-      this.ngOnInit();
+      this.dataSource.data = this.questions;
+      // this.ngOnInit();
     } else {
       this.filteredQuestions = this.questions.filter(q => {
         return (categories.indexOf(q.CateId) !== -1);
       });
-      this.dataSource = new MatTableDataSource(this.filteredQuestions); // binding filtered data to MatTable
+      this.dataSource.data = this.filteredQuestions; // binding filtered data to MatTable
     }
   }
 }
