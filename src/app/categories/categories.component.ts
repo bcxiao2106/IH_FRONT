@@ -44,6 +44,7 @@ export class CategoriesComponent implements OnInit {
     }
     if (this.selectedCategories.indexOf(cateId) !== -1) {
       this.selectedCategories.splice(this.selectedCategories.indexOf(cateId), 1);
+      
     } else {
       this.selectedCategories.push(cateId);
     }
