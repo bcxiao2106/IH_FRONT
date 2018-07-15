@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator, MatTableDataSource, MatSort, MatFormField } from '@angular/material';
+import { MatPaginator, MatTableDataSource, MatSort, MatFormField, MatAutocomplete, MatOption } from '@angular/material';
 import { ApiserviceService } from '../services/apiservice.service';
 import { Question } from '../models/question';
 
@@ -53,5 +53,9 @@ export class QuestionsComponent implements OnInit {
       });
       this.dataSource.data = this.filteredQuestions; // binding filtered data to MatTable
     }
+  }
+
+  quickAnswer(row: any) {
+    console.log(row);
   }
 }

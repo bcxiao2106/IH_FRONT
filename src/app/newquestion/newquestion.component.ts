@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ApiserviceService } from '../services/apiservice.service';
 import { Question } from '../models/question';
 import { Category } from '../models/category';
+import { createRendererV1 } from '../../../node_modules/@angular/core/src/view/refs';
 
 @Component({
   selector: 'app-newquestion',
@@ -25,7 +26,9 @@ export class NewquestionComponent implements OnInit {
       if (!categoryList) {
         return;
       }
-      this.categories = categoryList;
+      this.categories = categoryList.sort((cate1, cate2) => {
+        return cate1.CategoryName.localeCompare(cate2.CategoryName);
+      });
     });
   }
 

@@ -10,6 +10,7 @@ import { QuestionsComponent } from './questions/questions.component';
 import { ActiveDirective } from './directives/active.directive';
 import { MatInputModule, MatSortModule, MatTableModule, MatPaginatorModule, MatFormFieldModule } from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CategoriesComponent } from './categories/categories.component';
 import { NewquestionComponent } from './newquestion/newquestion.component';
@@ -42,7 +43,8 @@ import { SelectedDirective } from './directives/selected.directive';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    MatAutocompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]
