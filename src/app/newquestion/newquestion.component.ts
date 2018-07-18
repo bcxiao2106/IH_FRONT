@@ -28,7 +28,7 @@ export class NewquestionComponent implements OnInit {
       }
       this.categories = categoryList.sort((cate1, cate2) => {
         return cate1.CategoryName.localeCompare(cate2.CategoryName);
-      });
+      });     
     });
   }
 
