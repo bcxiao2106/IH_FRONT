@@ -12,7 +12,7 @@ import { createRendererV1 } from '../../../node_modules/@angular/core/src/view/r
 export class NewquestionComponent implements OnInit {
   question: Question;
   categories: Category[];
-  @Output() newQuestionAdded: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() newQuestionAdded: EventEmitter<string> = new EventEmitter<string>();
   constructor(private apiService: ApiserviceService) {
     this.question = new Question();
   }
@@ -39,7 +39,7 @@ export class NewquestionComponent implements OnInit {
         return;
       }
       this.question = new Question();
-      this.newQuestionAdded.emit(true);
+      this.newQuestionAdded.emit('last');
     });
   }
 }

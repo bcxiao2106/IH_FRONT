@@ -39,7 +39,10 @@ export class QuestionsComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  refresh(event) { // event from child component
+  refresh(goToPage: string) { // event from child component
+    if (goToPage === 'last') {
+      this.paginator.lastPage();
+    }
     this.ngOnInit(); // reload the data
   }
 
