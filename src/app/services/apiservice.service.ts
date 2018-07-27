@@ -13,7 +13,7 @@ import { environment } from './../../environments/enviornment.dev';
 })
 export class ApiserviceService {
 
-  private webApiHostURL = 'http://interviewhelper20180625011659.azurewebsites.net/';
+  private webApiHostURL = 'https://ih-api.azurewebsites.net/';
   private getQListURL = this.webApiHostURL + 'api/QuestionList';
   private getCatListURL = this.webApiHostURL + 'api/CategoryList';
   private getSolutionListURL = this.webApiHostURL + 'api/SolutionList';
