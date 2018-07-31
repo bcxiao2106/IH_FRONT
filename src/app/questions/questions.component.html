@@ -39,7 +39,6 @@
         <th mat-header-cell *matHeaderCellDef style="border-top: 0px;"> Category </th>
         <td mat-cell *matCellDef="let element" style="font-size: 13px;vertical-align:middle"> {{element.CategoryName}} </td>
     </ng-container>
-
     <!-- Answer Qty Column -->
     <ng-container matColumnDef="SolutionList">
         <th mat-header-cell *matHeaderCellDef style="border-top: 0px;"> Answers </th>
@@ -56,6 +55,6 @@
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns" style="border-top: 0px;border-bottom: 3px solid rgba(248, 80, 13, 0.322);height:30px"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;" style="height: 35px;"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="quickAnswer(row.QuestionId)" style="height: 35px;" data-toggle="tooltip" data-placement="top" title="Tooltip on top"></tr>
 </table>
 <mat-paginator [pageSizeOptions]="[10, 20, 25]" showFirstLastButtons></mat-paginator>

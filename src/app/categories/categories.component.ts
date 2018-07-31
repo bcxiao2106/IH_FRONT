@@ -4,6 +4,7 @@ import { ApiserviceService } from '../services/apiservice.service';
 import { Category } from '../models/category';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material';
+import { createRendererV1 } from '../../../node_modules/@angular/core/src/view/refs';
 
 @Component({
   selector: 'app-categories',
@@ -33,7 +34,9 @@ export class CategoriesComponent implements OnInit {
         if (!categoryList) {
           return;
         }
-        this.categories = categoryList;
+        this.categories = categoryList.sort((cate1, cate2): number => {
+          return cate1.CategoryName.localeCompare(cate2.CategoryName);
+        });
       }
     );
   }

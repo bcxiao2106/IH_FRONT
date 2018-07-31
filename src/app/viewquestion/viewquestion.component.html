@@ -1,5 +1,5 @@
 <!-- Button trigger modal -->
-<button type="button" class="badge-pill badge-light" data-toggle="modal" [attr.data-target]="'#ViewModal' + questionId" (click)="loadSolutions()" style="margin-bottom: 2px;margin-left:3px;border: 1px solid rgba(248, 80, 13, 0.322);font-size: 12px;outline: 0px;">View</button>
+<button type="button" class="badge-pill badge-light" data-toggle="modal" [attr.data-target]="'#ViewModal' + questionId" (click)="loadSolutions()" style="margin-bottom: 2px;margin-left:5px;border: 1px solid rgba(248, 80, 13, 0.322);font-size: 12px;outline: 0px;">View</button>
 
 <!-- Modal -->
 <div class="modal fade" [id]="'ViewModal' + questionId" tabindex="-1" role="application" aria-labelledby="newAnswerModal" aria-hidden="true">
@@ -20,9 +20,9 @@
                 <!--Answer list-->
                 <div class="card" *ngFor="let solution of solutionList" style="margin-bottom: 15px;border: 1px solid rgba(248, 80, 13, 0.322); background-color: rgba(243, 243, 243, 0.486)">
                     <div class="card-body">
-                        <h5 class="card-title">{{solution.SolutionId}}</h5>
+                        <!--key words, short drills-->
                         <p [innerHTML]="solution.SolutionDetails"></p>
-                        <a class="badge badge-pill badge-light">up +1</a>
+                        <!--Rating, comments-->
                     </div>
                 </div>
                 <div class="form-group row">

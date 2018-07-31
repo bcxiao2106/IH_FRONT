@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator, MatTableDataSource, MatSort, MatFormField } from '@angular/material';
+import { MatPaginator, MatTableDataSource, MatSort, MatFormField, MatAutocomplete, MatOption } from '@angular/material';
 import { ApiserviceService } from '../services/apiservice.service';
 import { Question } from '../models/question';
 
@@ -39,7 +39,10 @@ export class QuestionsComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  refresh(event) { // event from child component
+  refresh(goToPage: string) { // event from child component
+    if (goToPage === 'last') {
+      this.paginator.lastPage();
+    }
     this.ngOnInit(); // reload the data
   }
 
@@ -53,5 +56,9 @@ export class QuestionsComponent implements OnInit {
       });
       this.dataSource.data = this.filteredQuestions; // binding filtered data to MatTable
     }
+  }
+
+  quickAnswer(row: any) {
+    console.log(row);
   }
 }

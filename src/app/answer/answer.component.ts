@@ -10,7 +10,7 @@ import { Solution } from '../models/solution';
 export class AnswerComponent implements OnInit {
   @Input('questionId') questionId: number;
   @Input('questionTitle') questionTitle: string;
-  @Output() newSolutionAdded: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() newSolutionAdded: EventEmitter<string> = new EventEmitter<string>();
 
   newSolution: Solution = new Solution();
 
@@ -29,8 +29,7 @@ export class AnswerComponent implements OnInit {
       if (!newSolution) {
         return;
       }
-      this.newSolutionAdded.emit(true);
+      this.newSolutionAdded.emit('stay');
     });
   }
-
 }
