@@ -16,6 +16,7 @@ import { NewquestionComponent } from './newquestion/newquestion.component';
 import { AnswerComponent } from './answer/answer.component';
 import { ViewquestionComponent } from './viewquestion/viewquestion.component';
 import { SelectedDirective } from './directives/selected.directive';
+import { SearchboxComponent } from './searchbox/searchbox.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SelectedDirective } from './directives/selected.directive';
     NewquestionComponent,
     AnswerComponent,
     ViewquestionComponent,
-    SelectedDirective
+    SelectedDirective,
+    SearchboxComponent
   ],
   imports: [
     HttpClientModule,
