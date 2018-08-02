@@ -46,13 +46,15 @@ export class SelectedDirective implements OnInit, AfterViewInit, OnChanges {
 
   select(bgColor: string, color?: string, isBold?: Boolean) {
     this.el.nativeElement.style.backgroundColor = bgColor;
-    if (color) {
+    // if (color) {
       this.el.nativeElement.style.color = color;
-    }
+    // }
     if (isBold && isBold === true) {
+      let img = this.el.nativeElement.querySelector('img');
+      img.setAttribute('src', 'assets/icons/outline-clear-24px-white.svg');
       // this.el.nativeElement.style.fontWeight = 'bold';
-      this.el.nativeElement.innerHTML
-        += '&nbsp;<img src="assets/icons/outline-highlight_off-24px.svg" height="13" width="13">';
+      // this.el.nativeElement.src
+        // += '&nbsp;<img src="assets/icons/outline-clear-24px-white.svg" height="13" width="13">';
     } else {
       // this.el.nativeElement.style.fontWeight = 'normal';
       this.el.nativeElement.innerHTML = this.originalInnerHTML;

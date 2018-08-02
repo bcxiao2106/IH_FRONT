@@ -6,7 +6,7 @@ import { Component, OnInit, ElementRef } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  activeBgColor = '#F98F65';
+  activeBgColor = '#806B75';
   activeColor = 'white';
   constructor() { }
 

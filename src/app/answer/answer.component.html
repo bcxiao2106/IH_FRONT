@@ -1,11 +1,11 @@
 <!-- Button trigger modal -->
-<button type="button" class="badge-pill badge-light" data-toggle="modal" [attr.data-target]="'#AnswerModal' + questionId" style="margin-bottom: 2px;margin-left:5px;border: 1px solid rgba(248, 80, 13, 0.322);font-size: 12px;outline: 0px;">+ Answer</button>
+<button type="button" class="badge-pill badge-light" data-toggle="modal" [attr.data-target]="'#AnswerModal' + questionId" style="margin-bottom: 2px;margin-left:5px;border: 1px solid #FFAFD6;font-size: 12px;outline: 0px;">+ Answer</button>
 
 <!-- Modal -->
 <div class="modal fade" [id]="'AnswerModal' + questionId" tabindex="-1" role="application" aria-labelledby="newAnswerModal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
-            <div class="modal-header" style="background-color: #F8510D; color: white">
+            <div class="modal-header" style="background-color: #F08; color: white">
                 <h6 class="modal-title" id="exampleModalCenterTitle">Add Your Answer</h6>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -19,13 +19,13 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-sm-12">
-                        <textarea required [(ngModel)]="newSolution.SolutionDetails" class="form-control form-control-sm" rows="7" id="answerDetail" placeholder="Input your answer here" style="border: 1px solid rgba(248, 80, 13, 0.322)"></textarea>
+                        <textarea required [(ngModel)]="newSolution.SolutionDetails" class="form-control form-control-sm" rows="7" id="answerDetail" placeholder="Input your answer here" style="border: 1px solid #FFAFD6"></textarea>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-light btn-sm" style="border: 1px solid rgba(114, 113, 113, 0.322)" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-light btn-sm" (click)="addNewAnswer()" style="border: 1px solid rgba(248, 80, 13, 0.322)" data-dismiss="modal">Add</button>
+                <button type="button" class="btn btn-light btn-sm" (click)="addNewAnswer()" style="border: 1px solid #FFAFD6" data-dismiss="modal">Add</button>
             </div>
         </div>
     </div>

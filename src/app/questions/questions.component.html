@@ -2,7 +2,7 @@
 
 <div class="d-flex justify-content-between" style="margin-top: 20px;">
     <div class="col-5">
-        <input matInput (keyup)="applyFilter($event.target.value)" class="form-control" type="text" style="border: 1px solid rgba(248, 80, 13, 0.322);left: 0px;outline: 0px;" placeholder="Search">
+        <input matInput (keyup)="applyFilter($event.target.value)" class="form-control" type="text" style="border: 1px solid #FFAFD6;left: 0px; outline-color: #FFAFD6" placeholder="Search">
     </div>
     <div class="col-7" style="text-align: right">
         <app-newquestion (newQuestionAdded)="refresh($event)"></app-newquestion>
@@ -54,7 +54,7 @@
         </td>
     </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns" style="border-top: 0px;border-bottom: 3px solid rgba(248, 80, 13, 0.322);height:30px"></tr>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns" style="border-top: 0px;border-bottom: 3px solid #F08;height:30px"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="quickAnswer(row.QuestionId)" style="height: 35px;" data-toggle="tooltip" data-placement="top" title="Tooltip on top"></tr>
 </table>
 <mat-paginator [pageSizeOptions]="[10, 20, 25]" showFirstLastButtons></mat-paginator>

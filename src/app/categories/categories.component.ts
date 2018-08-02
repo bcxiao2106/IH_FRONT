@@ -13,9 +13,9 @@ import { createRendererV1 } from '../../../node_modules/@angular/core/src/view/r
 })
 export class CategoriesComponent implements OnInit {
   activeBgColor = 'white';
-  activeColor = '#F8510D';
-  selectedBgColor = 'rgba(248, 80, 13, 0.322)';
-  selectedColor = 'rgba(58, 58, 58)';
+  activeColor = 'black';
+  selectedBgColor = '#F08';
+  selectedColor = 'white';
   isBold: Boolean = true;
   resetSignal: Boolean = false;
   categories: Category[];
