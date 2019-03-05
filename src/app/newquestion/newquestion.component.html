@@ -15,22 +15,22 @@
                 <div class="form-group row">
                     <label for="questionId" class="col-sm-3 col-form-label">Question title</label>
                     <div class="col-sm-9">
-                        <input type="text" required [(ngModel)]="question.QuestTitle" class="form-control form-control-sm" id="questionId" placeholder="Question title" style="border: 1px solid #FFAFD6">
+                        <input type="text" required [(ngModel)]="question.questionTitle" class="form-control form-control-sm" id="questionId" placeholder="Question title" style="border: 1px solid #FFAFD6">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="categoryIdSelect" class="col-sm-3 col-form-label">Category</label>
                     <div class="col-sm-9">
-                        <select class="form-control form-control-sm" required [(ngModel)]="question.CateId" id="categoryIdSelect" style="border: 1px solid #FFAFD6">
+                        <select class="form-control form-control-sm" required [(ngModel)]="question.cid" id="categoryIdSelect" style="border: 1px solid #FFAFD6">
                             <option>Choose...</option>
-                            <option *ngFor="let category of categories" [value]="category.CateId">{{category.CategoryName}}</option>
+                            <option *ngFor="let category of categories" [value]="category.cid">{{category.CategoryName}}</option>
                           </select>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="questionDesc" class="col-sm-3 col-form-label">Question description</label>
                     <div class="col-sm-9">
-                        <textarea required [(ngModel)]="question.QuestDesc" class="form-control form-control-sm" rows="5" id="questionDesc" style="border: 1px solid #FFAFD6" placeholder="Question description"></textarea>
+                        <textarea required [(ngModel)]="question.questionDesc" class="form-control form-control-sm" rows="5" id="questionDesc" style="border: 1px solid #FFAFD6" placeholder="Question description"></textarea>
                     </div>
                 </div>
             </div>
