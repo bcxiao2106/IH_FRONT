@@ -29,6 +29,8 @@
         "@angular/platform-browser-dynamic": "^7.2.7",
         "@angular/router": "^7.2.7",
         "@auth0/angular-jwt": "^2.1.0",
+        "@angular/cli": "^7.3.4",
+        "@angular/compiler-cli": "^7.2.7",
         "azure-cli": "^0.10.20",
         "bootstrap": "^4.3.1",
         "core-js": "^2.6.5",
