@@ -11,50 +11,50 @@
 
 <table mat-table [dataSource]="dataSource" class="table table-hover">
     <!-- Q# Column -->
-    <ng-container matColumnDef="QuestionId">
+    <ng-container matColumnDef="qid">
         <th mat-header-cell *matHeaderCellDef style="border-top: 0px;"> # </th>
-        <td mat-cell *matCellDef="let element" style="font-size: 13px;vertical-align:middle"> {{element.QuestionId}} </td>
+        <td mat-cell *matCellDef="let element" style="font-size: 13px;vertical-align:middle"> {{element.qid}} </td>
     </ng-container>
 
     <!-- Cate# Column -->
-    <ng-container matColumnDef="CateId">
+    <ng-container matColumnDef="cid">
         <th hidden="hidden" mat-header-cell *matHeaderCellDef style="border-top: 0px;"> Cate# </th>
-        <td hidden="hidden" mat-cell *matCellDef="let element" style="font-size: 13px;vertical-align:middle"> {{element.CateId}} </td>
+        <td hidden="hidden" mat-cell *matCellDef="let element" style="font-size: 13px;vertical-align:middle"> {{element.cid}} </td>
     </ng-container>
 
     <!-- Weight Column -->
-    <ng-container matColumnDef="QuestTitle">
+    <ng-container matColumnDef="questionTitle">
         <th mat-header-cell *matHeaderCellDef style="border-top: 0px;"> Question </th>
-        <td mat-cell *matCellDef="let element" style="font-size: 13px;vertical-align:middle"> {{element.QuestTitle}} </td>
+        <td mat-cell *matCellDef="let element" style="font-size: 13px;vertical-align:middle"> {{element.questionTitle}} </td>
     </ng-container>
 
     <!-- Description Column -->
-    <ng-container matColumnDef="QuestDesc">
+    <ng-container matColumnDef="questionDesc">
         <th hidden="hidden" mat-header-cell *matHeaderCellDef style="border-top: 0px;"> Description </th>
-        <td hidden="hidden" mat-cell *matCellDef="let element" style="font-size: 13px;vertical-align:middle"> {{element.QuestDesc}} </td>
+        <td hidden="hidden" mat-cell *matCellDef="let element" style="font-size: 13px;vertical-align:middle"> {{element.questionDesc}} </td>
     </ng-container>
 
     <!-- Category Column -->
-    <ng-container matColumnDef="CategoryName">
+    <!-- <ng-container matColumnDef="categoryName">
         <th mat-header-cell *matHeaderCellDef style="border-top: 0px;"> Category </th>
         <td mat-cell *matCellDef="let element" style="font-size: 13px;vertical-align:middle"> {{element.CategoryName}} </td>
-    </ng-container>
-    <!-- Answer Qty Column -->
+    </ng-container> -->
+    <!-- Answer Qty Column
     <ng-container matColumnDef="SolutionList">
         <th mat-header-cell *matHeaderCellDef style="border-top: 0px;"> Answers </th>
         <td mat-cell *matCellDef="let element" style="font-size: 13px;vertical-align:middle"> {{element.TotalAnswers}} </td>
-    </ng-container>
+    </ng-container> -->
 
     <!-- operation Column -->
     <ng-container matColumnDef="Ops">
         <th mat-header-cell *matHeaderCellDef style="border-top: 0px;"> Ops </th>
         <td mat-cell *matCellDef="let element" style="font-size: 13px;vertical-align:middle">
-            <app-viewquestion [questionId]="element.QuestionId" [questionTitle]="element.QuestTitle"></app-viewquestion>
-            <app-answer [questionId]="element.QuestionId" [questionTitle]="element.QuestTitle" (newSolutionAdded)="refresh($event)"></app-answer>
+            <app-viewquestion [questionId]="element.qid" [questionTitle]="element.questionTitle"></app-viewquestion>
+            <app-answer [questionId]="element.qid" [questionTitle]="element.questionTitle" (newSolutionAdded)="refresh($event)"></app-answer>
         </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns" style="border-top: 0px;border-bottom: 3px solid #F08;height:30px"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="quickAnswer(row.QuestionId)" style="height: 35px;" data-toggle="tooltip" data-placement="top" title="Tooltip on top"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="quickAnswer(row.qid)" style="height: 35px;" data-toggle="tooltip" data-placement="top" title="Tooltip on top"></tr>
 </table>
 <mat-paginator [pageSizeOptions]="[10, 20, 25]" showFirstLastButtons></mat-paginator>

@@ -11,7 +11,7 @@ import { Question } from '../models/question';
 export class QuestionsComponent implements OnInit {
   activeBgColor = 'white';
   activeColor = '#F8510D';
-  displayedColumns: string[] = ['QuestionId', 'CateId', 'QuestTitle', 'QuestDesc', 'CategoryName', 'SolutionList', 'Ops'];
+  displayedColumns: string[] = ['qid', 'cid', 'questionTitle', 'questionDesc', 'Ops'];
   dataSource: MatTableDataSource<Question> = new MatTableDataSource();
   questions: Question[];
   filteredQuestions: Question[];
@@ -52,7 +52,7 @@ export class QuestionsComponent implements OnInit {
       // this.ngOnInit();
     } else {
       this.filteredQuestions = this.questions.filter(q => {
-        return (categories.indexOf(q.CateId) !== -1);
+        return (categories.indexOf(q.cid) !== -1);
       });
       this.dataSource.data = this.filteredQuestions; // binding filtered data to MatTable
     }

@@ -1,5 +1,5 @@
 export class Solution {
-    SolutionId: number;
-    QuestionId: number;
-    SolutionDetails: string;
+    sid: number;
+    qid: number;
+    solutionDetails: string;
 }

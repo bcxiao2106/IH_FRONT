@@ -17,13 +17,13 @@ export class AnswerComponent implements OnInit {
   constructor(private apiService: ApiserviceService) { }
 
   ngOnInit() {
-    this.newSolution.QuestionId = this.questionId;
+    this.newSolution.qid = this.questionId;
   }
 
   addNewAnswer() {
     let solutionDetail: string;
-    solutionDetail = this.newSolution.SolutionDetails.replace(/\n/g, '<br/>'); // replace all \n to <br/>
-    this.newSolution.SolutionDetails = solutionDetail;
+    solutionDetail = this.newSolution.solutionDetails.replace(/\n/g, '<br/>'); // replace all \n to <br/>
+    this.newSolution.solutionDetails = solutionDetail;
     this.apiService.addNewSolution(this.newSolution)
     .subscribe(newSolution => {
       if (!newSolution) {

@@ -13,10 +13,10 @@ import { environment } from './../../environments/enviornment.dev';
 })
 export class ApiserviceService {
 
-  private webApiHostURL = 'https://ih-api.azurewebsites.net/';
-  private getQListURL = this.webApiHostURL + 'api/QuestionList';
-  private getCatListURL = this.webApiHostURL + 'api/CategoryList';
-  private getSolutionListURL = this.webApiHostURL + 'api/SolutionList';
+  private webApiHostURL = 'https://groupint.herokuapp.com/';
+  private getQListURL = this.webApiHostURL + 'Questions';
+  private getCatListURL = this.webApiHostURL + 'Categories';
+  private getSolutionListURL = this.webApiHostURL + 'Answers';
   private postNewQuestionURL = this.webApiHostURL + 'api/NewQuestion';
   private putQuestionChangeURL = this.webApiHostURL + '';
   private postNewSolutionURL = this.webApiHostURL + 'api/NewSolution';
