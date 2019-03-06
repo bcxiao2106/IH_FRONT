@@ -23,7 +23,7 @@
                     <div class="col-sm-9">
                         <select class="form-control form-control-sm" required [(ngModel)]="question.cid" id="categoryIdSelect" style="border: 1px solid #FFAFD6">
                             <option>Choose...</option>
-                            <option *ngFor="let category of categories" [value]="category.cid">{{category.CategoryName}}</option>
+                            <option *ngFor="let category of categories" [value]="category.cid">{{category.categoryName}}</option>
                           </select>
                     </div>
                 </div>
