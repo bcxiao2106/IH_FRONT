@@ -40,7 +40,7 @@ export class ApiserviceService {
   }
 
   getSolutions(questionId): Observable<Solution[]> {
-    return this.httpClient.get<Solution[]>(this.getSolutionListURL, { params: new HttpParams().set('questionId', questionId) })
+    return this.httpClient.get<Solution[]>(this.getSolutionListURL+ '/Q/' + questionId)
       .pipe(
         catchError(this.handleError<Solution[]>(`get Solutions`)
       ));
